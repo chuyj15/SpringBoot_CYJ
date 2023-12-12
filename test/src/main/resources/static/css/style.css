@@ -1,0 +1,11 @@
+* {
+    padding : 0; margin : 0;
+}
+
+header > ul > li > a {
+    background-color: blue;
+}
+
+p {
+    color: red;
+}

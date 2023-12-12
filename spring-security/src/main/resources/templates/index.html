@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Spring Security</h1>
+    <h3>ID : <span th:text="${loginId}"></span></h3>
+    <ul>
+        <th:block sec:authorize="hasRole('ROLE_USER')">
+            <li><a href="/user">사용자</a></li>
+        </th:block>
+        <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+            <li><a href="/admin">관리자</a></li>
+        </th:block>
+    </ul>
+    <ul>
+        <th:block sec:authorize="isAnonymous()">
+            <li><a href="/login">로그인</a></li>
+        </th:block>
+        <th:block sec:authorize="isAuthenticated()">
+            <li><a href="/join">회원가입</a></li>
+        </th:block>
+    </ul>
+</body>
+</html>
